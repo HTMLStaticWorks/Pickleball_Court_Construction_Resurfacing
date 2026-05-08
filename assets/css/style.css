@@ -1,0 +1,233 @@
+/* 
+    Project: Pickleball Court Construction & Resurfacing
+    Author: Antigravity
+    Colors: Primary, Secondary, Tertiary
+*/
+
+:root {
+    --primary-color: #85bb2f; /* Pickleball Green */
+    --secondary-color: #1a2a6c; /* Court Blue */
+    --tertiary-color: #f8f9fa; /* Light Background */
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] {
+    --tertiary-color: #121212;
+    --text-dark: #f8f9fa;
+    --text-light: #212529;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--tertiary-color);
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+[data-bs-theme="dark"] h1, 
+[data-bs-theme="dark"] h2, 
+[data-bs-theme="dark"] h3, 
+[data-bs-theme="dark"] h4, 
+[data-bs-theme="dark"] h5, 
+[data-bs-theme="dark"] h6 {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: rgba(18, 18, 18, 0.95);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--secondary-color) !important;
+}
+
+[data-bs-theme="dark"] .navbar-brand {
+    color: var(--primary-color) !important;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-title h2 {
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    background-color: var(--tertiary-color);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 0 100px;
+    background: linear-gradient(rgba(26, 42, 108, 0.8), rgba(26, 42, 108, 0.8)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: #fff !important;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 80px 0 20px;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Back to Top */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 99;
+}
+
+/* RTL Support */
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: unset !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: unset !important;
+}
+
+/* Dashboard Sidebar */
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    padding-top: 20px;
+    transition: var(--transition);
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+.dashboard-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+    .dashboard-content {
+        margin-left: 0;
+    }
+}
