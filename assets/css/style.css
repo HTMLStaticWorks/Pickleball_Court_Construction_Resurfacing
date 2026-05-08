@@ -170,6 +170,14 @@ section {
     margin-top: 50px;
 }
 
+.pricing-hero {
+    background: linear-gradient(rgba(26, 42, 108, 0.7), rgba(26, 42, 108, 0.7)), url('../images/pricing-hero.png');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 80px;
+    margin-top: 50px;
+}
+
 /* Footer */
 footer {
     background-color: var(--secondary-color);
