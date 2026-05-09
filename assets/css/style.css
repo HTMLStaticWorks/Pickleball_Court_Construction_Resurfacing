@@ -200,14 +200,34 @@ section {
 }
 
 .section-title {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 10px;
+}
+
+@media (min-width: 992px) {
+    .section-title {
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        text-align: left;
+        gap: 15px;
+    }
+}
+
+.section-title span {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 .section-title h2 {
     position: relative;
     padding-bottom: 15px;
     display: inline-block;
+    margin-bottom: 0;
 }
 
 .section-title h2::after {
@@ -220,6 +240,20 @@ section {
     height: 4px;
     background-color: var(--primary-color);
     border-radius: 2px;
+}
+
+.highlight-orange {
+    background-color: #f57c00;
+    color: #fff;
+    padding: 2px 12px;
+    margin-right: 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+[data-bs-theme="dark"] .highlight-orange {
+    background-color: #e65100;
+    color: #fff;
 }
 
 /* Cards */
