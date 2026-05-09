@@ -18,13 +18,56 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .hero-2 {
-            background: linear-gradient(rgba(133, 187, 47, 0.1), rgba(133, 187, 47, 0.1)), url('assets/images/home-2-hero.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/service-1.png');
             background-size: cover;
             background-position: center;
-            padding: 220px 0 150px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 0;
+            color: white;
         }
-        .hero-2 h1 {
-            color: var(--secondary-color) !important;
+        .color-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            border-color: var(--primary-color) !important;
+        }
+        .quote-card {
+            transition: all 0.3s ease;
+        }
+        .quote-card:hover {
+            background-color: #ffffff !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+            transform: scale(1.02);
+        }
+        .community-card {
+            transition: all 0.3s ease;
+        }
+        .community-card:hover {
+            background-color: #ffffff !important;
+            border-color: var(--primary-color) !important;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+        .community-card:hover h6, 
+        .community-card:hover p {
+            color: #1a1a1a !important;
+        }
+        .partner-card {
+            transition: all 0.3s ease;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .partner-card:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            background-color: #ffffff !important;
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
         }
     </style>
 </head>
@@ -40,7 +83,10 @@
                 </a>
                 
                 <div class="d-flex align-items-center order-lg-3">
-                    <button class="btn btn-link text-dark me-2" id="theme-toggle" title="Toggle Theme">
+                    <button class="btn btn-link me-2 fw-bold" id="rtl-toggle" title="Toggle RTL" style="font-size: 0.8rem;">
+                        RTL
+                    </button>
+                    <button class="btn btn-link me-2" id="theme-toggle" title="Toggle Theme">
                         <i class="bi bi-moon-fill"></i>
                     </button>
                     <div class="d-none d-lg-block">
@@ -82,7 +128,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <h1 class="display-3 fw-bold mb-4">Restore Your Court's Former Glory</h1>
-                        <p class="lead mb-5 text-dark opacity-75">Premium resurfacing and precision striping for competitive pickleball play.</p>
+                        <p class="lead mb-5">Premium resurfacing and precision striping for competitive pickleball play.</p>
                         <form class="row g-3 justify-content-center bg-white p-4 rounded-4 shadow-lg mx-auto" style="max-width: 600px;">
                             <div class="col-md-8">
                                 <input type="email" class="form-control form-control-lg border-0 bg-light" placeholder="Enter your email for a free estimate">
@@ -96,79 +142,74 @@
             </div>
         </section>
 
-        <!-- Feature Grid (Section 1) -->
-        <section class="features py-5">
+        <!-- Feature Grid (The Quick Stats) -->
+        <section class="stats-2 py-5 bg-white">
             <div class="container">
                 <div class="row g-4 text-center">
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded-4 hover-shadow">
-                            <i class="bi bi-shield-check fs-1 text-primary mb-3"></i>
-                            <h4>Ultra-Durable</h4>
-                            <p class="text-muted">Weather-resistant coatings that last for years of intense play.</p>
+                    <div class="col-md-3">
+                        <div class="p-4 rounded-4 bg-light shadow-sm">
+                            <h2 class="display-6 fw-bold text-primary">2.5k</h2>
+                            <p class="mb-0 text-muted">Courts Restored</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded-4 hover-shadow">
-                            <i class="bi bi-palette fs-1 text-primary mb-3"></i>
-                            <h4>Vibrant Colors</h4>
-                            <p class="text-muted">A wide range of UV-stable pigments to match your club's identity.</p>
+                    <div class="col-md-3">
+                        <div class="p-4 rounded-4 bg-light shadow-sm">
+                            <h2 class="display-6 fw-bold text-primary">48h</h2>
+                            <p class="mb-0 text-muted">Avg. Turnaround</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded-4 hover-shadow">
-                            <i class="bi bi-lightning fs-1 text-primary mb-3"></i>
-                            <h4>Fast Installation</h4>
-                            <p class="text-muted">Get back to playing in as little as 48 hours after application.</p>
+                    <div class="col-md-3">
+                        <div class="p-4 rounded-4 bg-light shadow-sm">
+                            <h2 class="display-6 fw-bold text-primary">15+</h2>
+                            <p class="mb-0 text-muted">Color Options</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="p-4 rounded-4 bg-light shadow-sm">
+                            <h2 class="display-6 fw-bold text-primary">100%</h2>
+                            <p class="mb-0 text-muted">UV Protection</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section (Section 2) -->
-        <section class="gallery bg-light">
+        <!-- Color Designer Section (Unique to Home 2) -->
+        <section class="color-designer py-5 bg-light">
             <div class="container">
-                <div class="section-title">
-                    <h2>Our Masterpieces</h2>
-                    <p class="text-muted">A glimpse of the courts we've recently brought back to life.</p>
-                </div>
-                <div class="row g-3">
-                    <div class="col-md-6 col-lg-3"><img src="assets/images/service-1.png" class="img-fluid rounded-3" alt="Gallery"></div>
-                    <div class="col-md-6 col-lg-3"><img src="assets/images/service-2.png" class="img-fluid rounded-3" alt="Gallery"></div>
-                    <div class="col-md-6 col-lg-3"><img src="assets/images/service-3.png" class="img-fluid rounded-3" alt="Gallery"></div>
-                    <div class="col-md-6 col-lg-3"><img src="assets/images/service-4.png" class="img-fluid rounded-3" alt="Gallery"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Step Section (Section 3) -->
-        <section class="steps py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
+                <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <img src="assets/images/service-6.png" class="img-fluid rounded-4 shadow" alt="Process">
+                        <h2 class="display-5 fw-bold mb-4">Design Your Perfect Play</h2>
+                        <p class="text-muted mb-4">PicklePro offers the most vibrant and durable color palette in the industry. Mix and match our UV-stable pigments to create a court that stands out in your neighborhood or club.</p>
+                        <div class="row g-3">
+                            <div class="col-4">
+                                <div class="rounded-3 p-3 shadow-sm text-center bg-white border border-2 border-primary color-card">
+                                    <div class="rounded-circle mx-auto mb-2" style="width: 40px; height: 40px; background-color: #1a4a8e;"></div>
+                                    <small class="fw-bold">Olympic Blue</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="rounded-3 p-3 shadow-sm text-center bg-white border border-2 border-transparent color-card">
+                                    <div class="rounded-circle mx-auto mb-2" style="width: 40px; height: 40px; background-color: #2e7d32;"></div>
+                                    <small class="fw-bold">Forest Green</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="rounded-3 p-3 shadow-sm text-center bg-white border border-2 border-transparent color-card">
+                                    <div class="rounded-circle mx-auto mb-2" style="width: 40px; height: 40px; background-color: #f57c00;"></div>
+                                    <small class="fw-bold">Solar Orange</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-5">
+                            <a href="contact.html" class="btn btn-primary">Request Color Swatches</a>
+                        </div>
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="mb-4">How We Resurface Your Court</h2>
-                        <div class="d-flex mb-4">
-                            <div class="step-number bg-primary text-dark fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">1</div>
-                            <div>
-                                <h5>Surface Preparation</h5>
-                                <p class="text-muted">Deep cleaning and crack repair to ensure a smooth base.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <div class="step-number bg-primary text-dark fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">2</div>
-                            <div>
-                                <h5>Acrylic Application</h5>
-                                <p class="text-muted">Multiple layers of premium sports coating with precision texture.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="step-number bg-primary text-dark fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">3</div>
-                            <div>
-                                <h5>Final Striping</h5>
-                                <p class="text-muted">Computer-accurate line marking for official play standards.</p>
+                        <div class="position-relative">
+                            <img src="assets/images/service-4.png" class="img-fluid rounded-4 shadow-lg" alt="Color Showcase">
+                            <div class="position-absolute top-0 end-0 p-4">
+                                <span class="badge bg-secondary text-white p-3 rounded-pill shadow">15+ Color Variations</span>
                             </div>
                         </div>
                     </div>
@@ -176,44 +217,104 @@
             </div>
         </section>
 
-        <!-- CTA Section (Section 4) -->
-        <section class="cta-2 bg-primary py-5 text-center">
+        <!-- Conversion Specialist (Unique to Home 2) -->
+        <section class="conversion-specialist py-5 bg-white">
             <div class="container">
-                <h2 class="text-dark mb-4">Is Your Court Ready for a Makeover?</h2>
-                <a href="contact.html" class="btn btn-secondary btn-lg">Schedule an Inspection</a>
+                <div class="row align-items-center g-5 flex-lg-row-reverse">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-4">The Conversion Specialists</h2>
+                        <p class="text-muted mb-4">Have an underused tennis court? We can transform it into 4 professional pickleball courts, maximizing your space and community engagement. Our conversion process is fast, efficient, and cost-effective.</p>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-3 d-flex align-items-center">
+                                <i class="bi bi-arrow-repeat text-primary fs-4 me-3"></i>
+                                <span>Complete Surface Grinding & Leveling</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center">
+                                <i class="bi bi-grid-3x3-gap text-primary fs-4 me-3"></i>
+                                <span>Multi-Court Layout Design</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center">
+                                <i class="bi bi-pigeon-fill text-primary fs-4 me-3"></i>
+                                <span>Precision Net System Installation</span>
+                            </li>
+                        </ul>
+                        <div class="p-4 bg-light rounded-4 border-start border-4 border-primary quote-card">
+                            <p class="mb-0 fw-bold italic">"We tripled our member activity by converting our back courts. PicklePro handled everything."</p>
+                            <small class="text-muted">- Riverside Club Manager</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="assets/images/before-after.png" class="img-fluid rounded-4 shadow-lg" alt="Conversion">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- FAQ Section (Section 5) -->
-        <section class="faq bg-light">
+        <!-- The 48-Hour Transformation (Unique to Home 2) -->
+        <section class="steps-2 py-5 bg-secondary text-white">
             <div class="container">
-                <div class="section-title">
-                    <h2>Common Questions</h2>
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">The 48-Hour Transformation</h2>
+                    <p class="text-white">Our streamlined resurfacing process gets you back to play faster.</p>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="accordion" id="faqAccordion">
-                            <div class="accordion-item border-0 mb-3 rounded-4 overflow-hidden shadow-sm">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="p-4 h-100 bg-white bg-opacity-10 rounded-4 text-center">
+                            <div class="display-4 fw-bold text-primary mb-3">01</div>
+                            <h5>Day 1: Prep</h5>
+                            <p class="small text-white">Deep pressure wash, crack injection, and moisture barrier application.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 h-100 bg-white bg-opacity-10 rounded-4 text-center">
+                            <div class="display-4 fw-bold text-primary mb-3">02</div>
+                            <h5>Day 2: Coat</h5>
+                            <p class="small text-white">Two-layer acrylic application with silica-sand texture for perfect grip.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 h-100 bg-white bg-opacity-10 rounded-4 text-center">
+                            <div class="display-4 fw-bold text-primary mb-3">03</div>
+                            <h5>Day 3: Play</h5>
+                            <p class="small text-white">Final line marking and net setup. Your court is ready for action!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maintenance & Tips (Unique to Home 2) -->
+        <section class="maintenance-tips py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <img src="assets/images/service-6.png" class="img-fluid rounded-4 shadow" alt="Maintenance">
+                    </div>
+                    <div class="col-lg-7">
+                        <h2 class="display-5 fw-bold mb-4">Protect Your Investment</h2>
+                        <p class="text-muted mb-4">A pickleball court is a significant investment. Our maintenance programs ensure it stays in tournament condition for years to come.</p>
+                        <div class="accordion" id="maintenanceAccordion">
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-4 overflow-hidden">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                        How long does resurfacing last?
+                                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#m1">
+                                        Proactive Cleaning
                                     </button>
                                 </h2>
-                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Typically, a professionally resurfaced court lasts 5-8 years depending on usage and climate.
+                                <div id="m1" class="accordion-collapse collapse show" data-bs-parent="#maintenanceAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Weekly debris removal prevents staining and surface degradation. We offer professional cleaning packages.
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item border-0 mb-3 rounded-4 overflow-hidden shadow-sm">
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-4 overflow-hidden">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                        Can you convert a tennis court to pickleball?
+                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#m2">
+                                        Winterizing Your Court
                                     </button>
                                 </h2>
-                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Yes! We specialize in tennis-to-pickleball conversions, maximizing your existing space.
+                                <div id="m2" class="accordion-collapse collapse" data-bs-parent="#maintenanceAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Special care is needed to prevent crack expansion during freeze-thaw cycles. Ask about our winter shield.
                                     </div>
                                 </div>
                             </div>
@@ -227,140 +328,78 @@
         <section class="partners py-5">
             <div class="container text-center">
                 <h6 class="text-uppercase text-muted mb-4">Trusted by Leading Organizations</h6>
-                <div class="row g-4 align-items-center opacity-50">
-                    <div class="col-4 col-md-2"><i class="bi bi-award fs-1"></i></div>
-                    <div class="col-4 col-md-2"><i class="bi bi-shield-shaded fs-1"></i></div>
-                    <div class="col-4 col-md-2"><i class="bi bi-gem fs-1"></i></div>
-                    <div class="col-4 col-md-2"><i class="bi bi-building fs-1"></i></div>
-                    <div class="col-4 col-md-2"><i class="bi bi-trophy fs-1"></i></div>
-                    <div class="col-4 col-md-2"><i class="bi bi-patch-check fs-1"></i></div>
+                <div class="row g-4 align-items-center">
+                    <div class="col-4 col-md-2">
+                        <div class="p-3 border rounded-4 partner-card">
+                            <i class="bi bi-award fs-1"></i>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="p-3 border rounded-4 partner-card">
+                            <i class="bi bi-shield-shaded fs-1"></i>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="p-3 border rounded-4 partner-card">
+                            <i class="bi bi-gem fs-1"></i>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="p-3 border rounded-4 partner-card">
+                            <i class="bi bi-building fs-1"></i>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="p-3 border rounded-4 partner-card">
+                            <i class="bi bi-trophy fs-1"></i>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="p-3 border rounded-4 partner-card">
+                            <i class="bi bi-patch-check fs-1"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Site Analysis (New Section 5) -->
-        <section class="py-5 bg-white">
+        <!-- Community Section (Unique to Home 2) -->
+        <section class="community py-5 bg-white">
             <div class="container">
                 <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
-                        <img src="assets/images/drone-map.png" class="img-fluid rounded-4 shadow-lg" alt="Drone Mapping">
+                    <div class="col-lg-6 d-flex align-self-stretch">
+                        <img src="assets/images/service-1.png" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover; min-height: 400px;" alt="Community">
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="display-5 fw-bold mb-4">Precision Drone Mapping</h2>
-                        <p class="text-muted mb-4">We don't just "eye" the site. Our engineers use high-precision drones to create a digital twin of your location, analyzing drainage, soil stability, and lighting requirements before a single shovel hits the ground.</p>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-cpu text-primary fs-3 me-3"></i>
-                            <div>
-                                <h6 class="mb-0">Digital Site Planning</h6>
-                                <p class="small text-muted mb-0">Millimeter-accurate elevation data.</p>
+                        <h2 class="display-5 fw-bold mb-4">Built for the Community</h2>
+                        <p class="text-muted mb-4">From backyard matches to local park tournaments, our courts are where memories are made. We design with the player in mind, ensuring every surface provides the perfect "pop" and reliable grip for all skill levels.</p>
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-4 bg-light h-100 community-card">
+                                    <h6 class="fw-bold mb-2"><i class="bi bi-people-fill text-primary me-2"></i> All Ages Welcome</h6>
+                                    <p class="small text-muted mb-0">Surfaces optimized for safety and joint protection.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-4 bg-light h-100 community-card">
+                                    <h6 class="fw-bold mb-2"><i class="bi bi-cup-hot-fill text-primary me-2"></i> Social Spaces</h6>
+                                    <p class="small text-muted mb-0">Integrated seating and accessory options.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-radar text-primary fs-3 me-3"></i>
-                            <div>
-                                <h6 class="mb-0">Subsurface Analysis</h6>
-                                <p class="small text-muted mb-0">Detecting potential ground issues early.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Client Story (New Section 6) -->
-        <section class="py-5 bg-secondary text-white">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-7">
-                        <span class="text-primary fw-bold text-uppercase">Client Spotlight</span>
-                        <h2 class="display-5 fw-bold mb-4">The Orlando Country Club Transformation</h2>
-                        <p class="lead text-white-50 mb-4">"PicklePro didn't just build us courts; they built us a community hub. The quality of the acrylic and the precision of the lines are unmatched. Our members are absolutely thrilled."</p>
-                        <div class="d-flex align-items-center">
-                            <img src="assets/images/leader-1.png" class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover;" alt="Client">
-                            <div class="ms-3">
-                                <h6 class="mb-0 text-white">Robert Smith</h6>
-                                <small class="text-white-50">Director of Sports, Orlando CC</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="position-relative">
-                            <img src="assets/images/home-2-hero.png" class="img-fluid rounded-4 shadow" alt="Project">
-                            <a href="#" class="position-absolute top-50 start-50 translate-middle text-white display-3"><i class="bi bi-play-circle-fill"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Premium Materials (New Section 1) -->
-        <section class="py-5 bg-white">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6 order-lg-2">
-                        <img src="assets/images/materials.png" class="img-fluid rounded-4 shadow-lg" alt="Materials">
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <h2 class="display-5 fw-bold mb-4">Precision-Engineered Surfaces</h2>
-                        <p class="text-muted mb-4">We use a multi-layer acrylic system that ensures optimal ball bounce and player safety. Our surfaces are designed to withstand extreme temperatures and heavy play.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="bi bi-check2-circle text-primary me-2"></i> <strong>Cushion Layer:</strong> Reduces impact on joints.</li>
-                            <li class="mb-3"><i class="bi bi-check2-circle text-primary me-2"></i> <strong>Texture Layer:</strong> Provides consistent grip in all conditions.</li>
-                            <li class="mb-3"><i class="bi bi-check2-circle text-primary me-2"></i> <strong>Color Finish:</strong> UV-resistant and high-contrast.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Maintenance Plans (New Section 2) -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bold">Worry-Free Maintenance</h2>
-                    <p class="text-muted">Keep your court in tournament condition all year round.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                            <h4>Quarterly Deep Clean</h4>
-                            <p class="text-muted">Professional pressure washing and debris removal to prevent surface staining and slip hazards.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                            <h4>Annual Inspection</h4>
-                            <p class="text-muted">Detailed check for minor cracks and wear, including touch-ups for lines and net hardware.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Section (New Section 3) -->
-        <section class="py-5 bg-white">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
-                        <img src="assets/images/team-2.png" class="img-fluid rounded-4 shadow-lg" alt="Our Team">
-                    </div>
-                    <div class="col-lg-6">
-                        <h2 class="display-5 fw-bold mb-4">Meet Our Experts</h2>
-                        <p class="text-muted mb-4">Our team consists of certified sports engineers and passionate players who understand what makes a court "perfect." We bring over 50 years of combined experience to every project.</p>
-                        <a href="about.html" class="btn btn-outline-primary btn-lg">Learn About Our Team</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA (New Section 4) -->
-        <section class="py-5 bg-primary text-dark text-center">
+        <!-- Final CTA (Unique to Home 2) -->
+        <section class="py-5 bg-secondary text-white text-center">
             <div class="container py-4">
-                <h2 class="display-4 fw-bold mb-4">Ready to Start Building?</h2>
-                <p class="lead mb-5 opacity-75">Contact our design team today for a custom site assessment and quote.</p>
+                <h2 class="display-5 fw-bold mb-4">Start Your Restoration Journey</h2>
+                <p class="lead mb-5 text-white">Don't let another season go by on a worn-out surface. Get your free estimate today.</p>
                 <div class="d-flex justify-content-center gap-3">
-                    <a href="contact.html" class="btn btn-dark btn-lg px-5">Get Free Quote</a>
-                    <a href="services.html" class="btn btn-outline-dark btn-lg px-5">View Services</a>
+                    <a href="contact.html" class="btn btn-primary btn-lg px-5">Get Free Estimate</a>
+                    <a href="pricing.html" class="btn btn-outline-light btn-lg px-5">View Pricing</a>
                 </div>
             </div>
         </section>
@@ -418,7 +457,6 @@
                     <p class="mb-0 text-white-50">&copy; 2026 PicklePro. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" id="rtl-toggle" class="btn btn-sm btn-outline-light me-2">RTL Support</a>
                 </div>
             </div>
         </div>

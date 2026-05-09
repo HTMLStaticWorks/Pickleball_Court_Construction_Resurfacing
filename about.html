@@ -12,8 +12,42 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/service-4.png');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+        }
+        .about-card, .timeline-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
+            background-color: var(--bs-body-bg);
+        }
+        .about-card:hover, .timeline-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+            background-color: #ffffff !important;
+        }
+        [data-bs-theme="dark"] .about-card:hover, [data-bs-theme="dark"] .timeline-card:hover {
+            background-color: #2b3035 !important;
+        }
+        .about-card:hover h5, .about-card:hover small,
+        .timeline-card:hover h3, .timeline-card:hover h5, .timeline-card:hover p {
+            color: #1a1a1a !important;
+        }
+        [data-bs-theme="dark"] .about-card:hover h5, [data-bs-theme="dark"] .about-card:hover small,
+        [data-bs-theme="dark"] .timeline-card:hover h3, [data-bs-theme="dark"] .timeline-card:hover h5, [data-bs-theme="dark"] .timeline-card:hover p {
+            color: #ffffff !important;
+        }
+        [data-bs-theme="dark"] .about-card, [data-bs-theme="dark"] .timeline-card {
+            border-color: rgba(255,255,255,0.1);
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <!-- Header -->
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg">
@@ -22,18 +56,27 @@
                     <i class="bi bi-trophy-fill me-2 text-primary"></i>
                     <span>PicklePro</span>
                 </a>
+                
                 <div class="d-flex align-items-center order-lg-3">
-                    <button class="btn btn-link text-dark me-2" id="theme-toggle" title="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+                    <button class="btn btn-link me-2 fw-bold" id="rtl-toggle" title="Toggle RTL" style="font-size: 0.8rem;">
+                        RTL
+                    </button>
+                    <button class="btn btn-link me-2" id="theme-toggle" title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
                     <div class="d-none d-lg-block">
                         <a href="login.html" class="btn btn-secondary me-2">Login</a>
                         <a href="register.html" class="btn btn-primary">Sign Up</a>
                     </div>
-                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><span class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
-                <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title">PicklePro</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PicklePro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
@@ -44,6 +87,8 @@
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item d-lg-none mt-3"><a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a></li>
+                            <li class="nav-item d-lg-none"><a href="register.html" class="btn btn-primary w-100">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
@@ -56,12 +101,6 @@
         <section class="about-hero text-white">
             <div class="container text-center">
                 <h1 class="display-4 fw-bold">About PicklePro</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
-                        <li class="breadcrumb-item active text-primary" aria-current="page">About Us</li>
-                    </ol>
-                </nav>
             </div>
         </section>
 
@@ -78,20 +117,24 @@
                         <p class="text-muted">What started as a small family business has grown into a nationwide leader in court construction and resurfacing. We pride ourselves on using the best materials and latest technology to deliver surfaces that players love.</p>
                         <div class="row g-4 mt-2">
                             <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-people-fill text-primary fs-3 me-3"></i>
-                                    <div>
-                                        <h5 class="mb-0">Expert Team</h5>
-                                        <small class="text-muted">ASBA Certified</small>
+                                <div class="p-3 border rounded-4 about-card">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-people-fill text-primary fs-3 me-3"></i>
+                                        <div>
+                                            <h5 class="mb-0">Expert Team</h5>
+                                            <small class="text-muted">ASBA Certified</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-gear-fill text-primary fs-3 me-3"></i>
-                                    <div>
-                                        <h5 class="mb-0">Best Tools</h5>
-                                        <small class="text-muted">Modern Tech</small>
+                                <div class="p-3 border rounded-4 about-card">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-gear-fill text-primary fs-3 me-3"></i>
+                                        <div>
+                                            <h5 class="mb-0">Best Tools</h5>
+                                            <small class="text-muted">Modern Tech</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -214,24 +257,24 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4 text-center">
-                        <div class="p-4 border rounded-4">
+                        <div class="p-4 border rounded-4 timeline-card h-100">
                             <h3 class="text-primary fw-bold">2014</h3>
                             <h5>Foundation</h5>
-                            <p class="small text-muted">PicklePro was born in a small garage with a big vision for sports surfaces.</p>
+                            <p class="small text-muted mb-0">PicklePro was born in a small garage with a big vision for sports surfaces.</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
-                        <div class="p-4 border rounded-4 bg-light">
+                        <div class="p-4 border rounded-4 timeline-card h-100">
                             <h3 class="text-primary fw-bold">2019</h3>
                             <h5>Expansion</h5>
-                            <p class="small text-muted">Opened our second facility and reached our 500th court construction.</p>
+                            <p class="small text-muted mb-0">Opened our second facility and reached our 500th court construction.</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
-                        <div class="p-4 border rounded-4">
+                        <div class="p-4 border rounded-4 timeline-card h-100">
                             <h3 class="text-primary fw-bold">2026</h3>
                             <h5>Global Leader</h5>
-                            <p class="small text-muted">Recognized as the industry benchmark for high-performance court systems.</p>
+                            <p class="small text-muted mb-0">Recognized as the industry benchmark for high-performance court systems.</p>
                         </div>
                     </div>
                 </div>
@@ -345,7 +388,6 @@
                     <p class="mb-0 text-white-50">&copy; 2026 PicklePro. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" id="rtl-toggle" class="btn btn-sm btn-outline-light me-2">RTL Support</a>
                 </div>
             </div>
         </div>

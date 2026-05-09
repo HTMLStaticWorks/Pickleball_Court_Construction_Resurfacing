@@ -15,6 +15,7 @@
 </head>
 <body>
     <!-- Header -->
+    <!-- Header -->
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -22,18 +23,27 @@
                     <i class="bi bi-trophy-fill me-2 text-primary"></i>
                     <span>PicklePro</span>
                 </a>
+                
                 <div class="d-flex align-items-center order-lg-3">
-                    <button class="btn btn-link text-dark me-2" id="theme-toggle" title="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+                    <button class="btn btn-link me-2 fw-bold" id="rtl-toggle" title="Toggle RTL" style="font-size: 0.8rem;">
+                        RTL
+                    </button>
+                    <button class="btn btn-link me-2" id="theme-toggle" title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
                     <div class="d-none d-lg-block">
                         <a href="login.html" class="btn btn-secondary me-2">Login</a>
                         <a href="register.html" class="btn btn-primary">Sign Up</a>
                     </div>
-                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><span class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
-                <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title">PicklePro</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PicklePro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
@@ -44,6 +54,8 @@
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item d-lg-none mt-3"><a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a></li>
+                            <li class="nav-item d-lg-none"><a href="register.html" class="btn btn-primary w-100">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
@@ -132,20 +144,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                                    <img src="assets/images/hero-bg.png" class="card-img-top" alt="Blog">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <span class="badge bg-light text-primary border border-primary">Trends</span>
-                                            <small class="text-muted ms-2">May 10, 2026</small>
-                                        </div>
-                                        <h5 class="card-title">Future-Proofing Your Sports Complex</h5>
-                                        <p class="card-text text-muted">Smart lighting and high-tech drainage systems to consider...</p>
-                                        <a href="blog-details.html" class="btn btn-link p-0 fw-bold">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                         <!-- Pagination -->
                         <nav class="mt-5">
@@ -357,7 +356,6 @@
                     <p class="mb-0 text-white-50">&copy; 2026 PicklePro. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" id="rtl-toggle" class="btn btn-sm btn-outline-light me-2">RTL Support</a>
                 </div>
             </div>
         </div>
