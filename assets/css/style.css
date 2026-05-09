@@ -163,21 +163,34 @@ p {
 /* Mobile Menu Adjustments */
 @media (max-width: 991.98px) {
     .navbar-nav {
-        padding-top: 10px;
+        display: flex !important;
+        flex-direction: column !important;
+        padding-top: 20px;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .nav-item {
-        width: 100%;
+        width: 100% !important;
+        display: block !important;
     }
     
     .nav-link {
-        padding: 12px 15px !important;
+        padding: 12px 20px !important;
         border-radius: 8px;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+        display: block !important;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    [data-bs-theme="dark"] .nav-link {
+        border-bottom-color: rgba(255,255,255,0.05);
     }
     
     .nav-link:hover, .nav-link.active {
         background-color: rgba(133, 187, 47, 0.1);
+        color: var(--primary-color) !important;
     }
     
     [data-bs-theme="dark"] .nav-link:hover, 
