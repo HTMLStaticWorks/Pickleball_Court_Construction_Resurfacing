@@ -199,6 +199,14 @@ p {
     }
 }
 
+/* Force offcanvas menu visibility */
+.offcanvas.show .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 /* Header Action Buttons (Static Contrast) */
 header .btn-secondary {
     background-color: #1a2a6c !important;
@@ -320,6 +328,22 @@ footer .form-control:focus {
 
 [data-bs-theme="dark"] .offcanvas-title {
     color: var(--primary-color);
+}
+
+.offcanvas {
+    background-color: var(--tertiary-color) !important;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+}
+
+[data-bs-theme="dark"] .offcanvas {
+    background-color: #121212 !important;
+    border-left: 1px solid rgba(255,255,255,0.05);
+}
+
+.offcanvas-body {
+    padding: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 /* Sections */
