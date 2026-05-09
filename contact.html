@@ -17,29 +17,20 @@
     <!-- Header -->
     <!-- Header -->
     <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-lg">
             <div class="container">
+                <!-- 1. Brand Logo (Left) -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <i class="bi bi-trophy-fill me-2 text-primary"></i>
                     <span>PicklePro</span>
                 </a>
                 
-                <div class="d-flex align-items-center">
-                    <div class="d-none d-lg-flex align-items-center me-3">
-                        <button class="btn btn-link text-decoration-none me-2 fw-bold" id="rtl-toggle" title="Toggle RTL">RTL</button>
-                        <button class="btn btn-link text-decoration-none" id="theme-toggle" title="Toggle Theme">
-                            <i class="bi bi-moon-fill"></i>
-                        </button>
-                    </div>
-                    <div class="d-none d-lg-block me-3">
-                        <a href="login.html" class="btn btn-secondary btn-sm px-3 me-2">Login</a>
-                        <a href="register.html" class="btn btn-primary btn-sm px-3">Sign Up</a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
+                <!-- 2. Mobile Toggler (Right on Mobile) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <!-- 3. Offcanvas / Desktop Menu (Center) -->
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title d-flex align-items-center" id="offcanvasNavbarLabel">
@@ -49,25 +40,39 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
+                        <!-- Mobile Toggles (Mobile Only) -->
                         <div class="d-flex d-lg-none align-items-center mb-4 pb-3 border-bottom">
                             <button class="rtl-toggle-mobile me-2 fw-bold" title="Toggle RTL">RTL</button>
                             <button class="theme-toggle-mobile" title="Toggle Theme">
                                 <i class="bi bi-moon-fill me-1"></i> Mode
                             </button>
                         </div>
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        
+                        <!-- Main Links (Centered on Desktop) -->
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <!-- Mobile-only Login/Signup -->
                             <li class="nav-item d-lg-none mt-3">
                                 <a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a>
                                 <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
                             </li>
                         </ul>
                     </div>
+                </div>
+
+                <!-- 4. Desktop Action Buttons (Right Corner) -->
+                <div class="d-none d-lg-flex align-items-center ms-lg-3">
+                    <button class="btn btn-link text-decoration-none me-2 fw-bold" id="rtl-toggle" title="Toggle RTL">RTL</button>
+                    <button class="btn btn-link text-decoration-none me-3" id="theme-toggle" title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-secondary btn-sm px-3 me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary btn-sm px-3">Sign Up</a>
                 </div>
             </div>
         </nav>
@@ -403,6 +408,7 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
