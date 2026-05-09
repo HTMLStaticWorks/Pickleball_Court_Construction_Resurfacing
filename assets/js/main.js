@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const offcanvasElement = document.getElementById('offcanvasNavbar');
     if (offcanvasElement) {
-        const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
                 bsOffcanvas.hide();
             });
         });

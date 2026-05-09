@@ -231,13 +231,17 @@ footer .form-control:focus {
 .theme-toggle-mobile, .rtl-toggle-mobile {
     width: auto;
     height: auto;
-    padding: 8px 15px;
+    padding: 8px 18px;
     border-radius: 30px !important;
     font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.05) !important;
 }
 
 #theme-toggle:hover, #rtl-toggle:hover, .theme-toggle-mobile:hover, .rtl-toggle-mobile:hover {
-    background-color: rgba(0,0,0,0.05) !important;
+    background-color: rgba(0,0,0,0.1) !important;
     transform: translateY(-2px);
 }
 
@@ -247,13 +251,32 @@ footer .form-control:focus {
 [data-bs-theme="dark"] .rtl-toggle-mobile {
     color: #fff !important;
     border-color: rgba(255,255,255,0.2) !important;
+    background-color: rgba(255,255,255,0.05) !important;
 }
 
 [data-bs-theme="dark"] #theme-toggle:hover, 
 [data-bs-theme="dark"] #rtl-toggle:hover,
 [data-bs-theme="dark"] .theme-toggle-mobile:hover,
 [data-bs-theme="dark"] .rtl-toggle-mobile:hover {
-    background-color: rgba(255,255,255,0.1) !important;
+    background-color: rgba(255,255,255,0.15) !important;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 20px 25px;
+}
+
+[data-bs-theme="dark"] .offcanvas-header {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.offcanvas-title {
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+[data-bs-theme="dark"] .offcanvas-title {
+    color: var(--primary-color);
 }
 
 /* Sections */
