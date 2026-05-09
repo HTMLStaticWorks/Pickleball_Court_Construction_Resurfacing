@@ -138,7 +138,12 @@ p {
 .navbar-brand {
     font-weight: 800;
     font-size: 1.5rem;
-    color: #1a2a6c !important; /* Fixed Court Blue */
+    color: var(--secondary-color) !important;
+    transition: var(--transition);
+}
+
+[data-bs-theme="dark"] .navbar-brand {
+    color: var(--primary-color) !important;
 }
 
 .nav-link {
@@ -209,7 +214,7 @@ footer .form-control:focus {
 }
 
 /* Theme and RTL Toggle Buttons */
-#theme-toggle, #rtl-toggle {
+#theme-toggle, #rtl-toggle, .theme-toggle-mobile, .rtl-toggle-mobile {
     width: 40px;
     height: 40px;
     padding: 0;
@@ -223,9 +228,32 @@ footer .form-control:focus {
     transition: var(--transition);
 }
 
-#theme-toggle:hover, #rtl-toggle:hover {
+.theme-toggle-mobile, .rtl-toggle-mobile {
+    width: auto;
+    height: auto;
+    padding: 8px 15px;
+    border-radius: 30px !important;
+    font-size: 0.85rem;
+}
+
+#theme-toggle:hover, #rtl-toggle:hover, .theme-toggle-mobile:hover, .rtl-toggle-mobile:hover {
     background-color: rgba(0,0,0,0.05) !important;
-    transform: rotate(15deg);
+    transform: translateY(-2px);
+}
+
+[data-bs-theme="dark"] #theme-toggle, 
+[data-bs-theme="dark"] #rtl-toggle, 
+[data-bs-theme="dark"] .theme-toggle-mobile, 
+[data-bs-theme="dark"] .rtl-toggle-mobile {
+    color: #fff !important;
+    border-color: rgba(255,255,255,0.2) !important;
+}
+
+[data-bs-theme="dark"] #theme-toggle:hover, 
+[data-bs-theme="dark"] #rtl-toggle:hover,
+[data-bs-theme="dark"] .theme-toggle-mobile:hover,
+[data-bs-theme="dark"] .rtl-toggle-mobile:hover {
+    background-color: rgba(255,255,255,0.1) !important;
 }
 
 /* Sections */
