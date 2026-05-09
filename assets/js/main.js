@@ -2,39 +2,47 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('#theme-toggle, .theme-toggle-mobile');
     const htmlElement = document.documentElement;
-    const icon = themeToggle.querySelector('i');
 
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.setAttribute('data-bs-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    updateAllThemeIcons(savedTheme);
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-bs-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        htmlElement.setAttribute('data-bs-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateAllThemeIcons(newTheme);
+        });
     });
 
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-        } else {
-            icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-        }
+    function updateAllThemeIcons(theme) {
+        themeToggles.forEach(toggle => {
+            const icon = toggle.querySelector('i');
+            if (icon) {
+                if (theme === 'dark') {
+                    icon.classList.remove('bi-moon-fill');
+                    icon.classList.add('bi-sun-fill');
+                } else {
+                    icon.classList.remove('bi-sun-fill');
+                    icon.classList.add('bi-moon-fill');
+                }
+            }
+        });
     }
 
-    // RTL Toggle (Internal use or as a feature)
-    const rtlToggle = document.getElementById('rtl-toggle');
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
+    // RTL Toggle
+    const rtlToggles = document.querySelectorAll('#rtl-toggle, .rtl-toggle-mobile');
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             const currentDir = htmlElement.getAttribute('dir');
             const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
             htmlElement.setAttribute('dir', newDir);
         });
-    }
+    });
 
     // Back to Top Button
     const backToTop = document.getElementById('back-to-top');
