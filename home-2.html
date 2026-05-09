@@ -18,14 +18,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .hero-2 {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/service-1.png');
+            background: linear-gradient(rgba(26, 42, 108, 0.7), rgba(26, 42, 108, 0.85)), url('assets/images/service-1.png');
             background-size: cover;
             background-position: center;
             min-height: 85vh;
             display: flex;
             align-items: center;
             padding: 140px 0;
-            color: white;
+        }
+        .hero-2 h1, .hero-2 p {
+            color: #ffffff !important;
         }
         .color-card {
             transition: all 0.3s ease;
@@ -75,66 +77,66 @@
 
     <!-- Header -->
     <header class="fixed-top">
-                <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <!-- 1. Brand Logo (Left) -->
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <i class="bi bi-trophy-fill me-2 text-primary"></i>
+                <a class="brand-identity" href="index.html">
+                    <i class="bi bi-trophy-fill"></i>
                     <span>PicklePro</span>
                 </a>
                 
-                <!-- 2. Mobile Toggler (Right on Mobile) -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <i class="bi bi-list fs-1"></i>
                 </button>
 
-                <!-- 3. Offcanvas / Desktop Menu (Center) -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title d-flex align-items-center" id="offcanvasNavbarLabel">
-                            <i class="bi bi-trophy-fill me-2 text-primary"></i>
-                            <span>PicklePro</span>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title">
+                            <a href="index.html" class="brand-identity">
+                                <i class="bi bi-trophy-fill"></i>
+                                <span>PicklePro</span>
+                            </a>
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <!-- Mobile Toggles (Mobile Only) -->
-                        <div class="d-flex d-lg-none align-items-center mb-4 pb-3 border-bottom">
-                            <button class="rtl-toggle-mobile me-2 fw-bold" title="Toggle RTL">RTL</button>
-                            <button class="theme-toggle-mobile" title="Toggle Theme">
-                                <i class="bi bi-moon-fill me-1"></i> Mode
-                            </button>
+                        <div class="mobile-controls d-lg-none mb-4">
+                            <div class="d-flex gap-2">
+                                <button class="mobile-control-btn theme-toggle-mobile">
+                                    <i class="bi bi-moon-fill"></i> Mode
+                                </button>
+                                <button class="mobile-control-btn rtl-toggle-mobile">
+                                    <i class="bi bi-translate"></i> RTL
+                                </button>
+                            </div>
                         </div>
                         
-                        <!-- Main Links (Centered on Desktop) -->
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="home-2.html">Home 2</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <!-- Mobile-only Login/Signup -->
-                            <li class="nav-item d-lg-none mt-3">
-                                <a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a>
-                                <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
-                            </li>
                         </ul>
+                        
+                        <div class="d-lg-none mt-4">
+                            <a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a>
+                            <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 4. Desktop Action Buttons (Right Corner) -->
-                <div class="d-none d-lg-flex align-items-center ms-lg-3">
-                    <button class="btn btn-link text-decoration-none me-2 fw-bold" id="rtl-toggle" title="Toggle RTL">RTL</button>
-                    <button class="btn btn-link text-decoration-none me-3" id="theme-toggle" title="Toggle Theme">
-                        <i class="bi bi-moon-fill"></i>
-                    </button>
-                    <a href="login.html" class="btn btn-secondary btn-sm px-3 me-2">Login</a>
-                    <a href="register.html" class="btn btn-primary btn-sm px-3">Sign Up</a>
+                <div class="d-none d-lg-flex align-items-center gap-2">
+                    <button class="btn" id="theme-toggle" title="Toggle Theme"><i class="bi bi-moon-fill fs-5"></i></button>
+                    <button class="btn me-3" id="rtl-toggle" title="Toggle RTL">RTL</button>
+                    <a href="login.html" class="btn btn-link text-main text-decoration-none fw-bold me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary px-4">Sign Up</a>
                 </div>
             </div>
         </nav>
     </header>
+
 
     <main>
         <!-- Hero Section -->
@@ -345,33 +347,33 @@
                 <h6 class="text-uppercase text-muted mb-4">Trusted by Leading Organizations</h6>
                 <div class="row g-4 align-items-center">
                     <div class="col-4 col-md-2">
-                        <div class="p-3 border rounded-4 partner-card">
-                            <i class="bi bi-award fs-1"></i>
+                        <div class="card p-0 border-0 shadow-sm rounded-4 overflow-hidden hover-card bg-white h-100 d-flex align-items-center justify-content-center">
+                            <img src="assets/images/partner-1.png" class="w-100 h-100 object-fit-cover opacity-75 hover-opacity-100 transition-all" alt="Partner 1">
                         </div>
                     </div>
                     <div class="col-4 col-md-2">
-                        <div class="p-3 border rounded-4 partner-card">
-                            <i class="bi bi-shield-shaded fs-1"></i>
+                        <div class="card p-0 border-0 shadow-sm rounded-4 overflow-hidden hover-card bg-white h-100 d-flex align-items-center justify-content-center">
+                            <img src="assets/images/partner-2.png" class="w-100 h-100 object-fit-cover opacity-75 hover-opacity-100 transition-all" alt="Partner 2">
                         </div>
                     </div>
                     <div class="col-4 col-md-2">
-                        <div class="p-3 border rounded-4 partner-card">
-                            <i class="bi bi-gem fs-1"></i>
+                        <div class="card p-0 border-0 shadow-sm rounded-4 overflow-hidden hover-card bg-white h-100 d-flex align-items-center justify-content-center">
+                            <img src="assets/images/partner-3.png" class="w-100 h-100 object-fit-cover opacity-75 hover-opacity-100 transition-all" alt="Partner 3">
                         </div>
                     </div>
                     <div class="col-4 col-md-2">
-                        <div class="p-3 border rounded-4 partner-card">
-                            <i class="bi bi-building fs-1"></i>
+                        <div class="card p-0 border-0 shadow-sm rounded-4 overflow-hidden hover-card bg-white h-100 d-flex align-items-center justify-content-center">
+                            <img src="assets/images/partner-4.png" class="w-100 h-100 object-fit-cover opacity-75 hover-opacity-100 transition-all" alt="Partner 4">
                         </div>
                     </div>
                     <div class="col-4 col-md-2">
-                        <div class="p-3 border rounded-4 partner-card">
-                            <i class="bi bi-trophy fs-1"></i>
+                        <div class="card p-0 border-0 shadow-sm rounded-4 overflow-hidden hover-card bg-white h-100 d-flex align-items-center justify-content-center">
+                            <img src="assets/images/partner-5.png" class="w-100 h-100 object-fit-cover opacity-75 hover-opacity-100 transition-all" alt="Partner 5">
                         </div>
                     </div>
                     <div class="col-4 col-md-2">
-                        <div class="p-3 border rounded-4 partner-card">
-                            <i class="bi bi-patch-check fs-1"></i>
+                        <div class="card p-0 border-0 shadow-sm rounded-4 overflow-hidden hover-card bg-white h-100 d-flex align-items-center justify-content-center">
+                            <img src="assets/images/partner-6.png" class="w-100 h-100 object-fit-cover opacity-75 hover-opacity-100 transition-all" alt="Partner 6">
                         </div>
                     </div>
                 </div>
@@ -420,59 +422,54 @@
         </section>
     </main>
 
-    <!-- Footer (Consistent) -->
-    <footer>
+    <!-- Footer -->
+    <footer class="mt-5">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <a class="navbar-brand d-flex align-items-center text-white mb-3" href="#">
-                        <i class="bi bi-trophy-fill me-2 text-primary"></i>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="brand-identity mb-4" href="index.html">
+                        <i class="bi bi-trophy-fill"></i>
                         <span>PicklePro</span>
                     </a>
-                    <p class="text-white-50">Leading the way in professional pickleball court solutions. We build excellence from the ground up.</p>
+                    <p class="text-white opacity-75 mb-4">Building world-class pickleball courts with precision and passion. We are your partners in creating the ultimate playing experience.</p>
                     <div class="d-flex gap-3">
-                        <a href="#"><i class="bi bi-facebook fs-4"></i></a>
-                        <a href="#"><i class="bi bi-twitter-x fs-4"></i></a>
-                        <a href="#"><i class="bi bi-instagram fs-4"></i></a>
-                        <a href="#"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-4">Company</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Explore</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="about.html">Our Story</a></li>
                         <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
-                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="pricing.html">Pricing Plans</a></li>
+                        <li class="mb-2"><a href="blog.html">Latest News</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-4">Support</h5>
-                    <ul class="list-unstyled">
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled footer-links">
                         <li class="mb-2"><a href="contact.html">Contact Us</a></li>
-                        <li class="mb-2"><a href="faq.html">FAQ</a></li>
-                        <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
-                        <li class="mb-2"><a href="terms.html">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#">Help Center</a></li>
+                        <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#">Terms of Use</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p class="text-white-50">Subscribe to get the latest tips and offers.</p>
-                    <form class="mt-3">
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Newsletter</h5>
+                    <p class="text-white opacity-75 mb-4">Stay updated with our latest projects and offers.</p>
+                    <form>
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                            <button class="btn btn-primary" type="button">Join</button>
+                            <input type="email" class="form-control border-0 text-white" placeholder="Enter email" style="padding: 12px;">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <hr class="mt-5 mb-4 border-white-50">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 text-white-50">&copy; 2026 PicklePro. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                </div>
+            <div class="border-top border-white border-opacity-10 mt-5 pt-4 text-center">
+                <p class="text-white-50 small mb-0">&copy; 2026 PicklePro Construction & Resurfacing. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -487,10 +484,3 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-

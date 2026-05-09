@@ -17,62 +17,61 @@
     <!-- Header -->
     <!-- Header -->
     <header class="fixed-top">
-                <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <!-- 1. Brand Logo (Left) -->
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <i class="bi bi-trophy-fill me-2 text-primary"></i>
+                <a class="brand-identity" href="index.html">
+                    <i class="bi bi-trophy-fill"></i>
                     <span>PicklePro</span>
                 </a>
                 
-                <!-- 2. Mobile Toggler (Right on Mobile) -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <i class="bi bi-list fs-1"></i>
                 </button>
 
-                <!-- 3. Offcanvas / Desktop Menu (Center) -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title d-flex align-items-center" id="offcanvasNavbarLabel">
-                            <i class="bi bi-trophy-fill me-2 text-primary"></i>
-                            <span>PicklePro</span>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title">
+                            <a href="index.html" class="brand-identity">
+                                <i class="bi bi-trophy-fill"></i>
+                                <span>PicklePro</span>
+                            </a>
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <!-- Mobile Toggles (Mobile Only) -->
-                        <div class="d-flex d-lg-none align-items-center mb-4 pb-3 border-bottom">
-                            <button class="rtl-toggle-mobile me-2 fw-bold" title="Toggle RTL">RTL</button>
-                            <button class="theme-toggle-mobile" title="Toggle Theme">
-                                <i class="bi bi-moon-fill me-1"></i> Mode
-                            </button>
+                        <div class="mobile-controls d-lg-none mb-4">
+                            <div class="d-flex gap-2">
+                                <button class="mobile-control-btn theme-toggle-mobile">
+                                    <i class="bi bi-moon-fill"></i> Mode
+                                </button>
+                                <button class="mobile-control-btn rtl-toggle-mobile">
+                                    <i class="bi bi-translate"></i> RTL
+                                </button>
+                            </div>
                         </div>
                         
-                        <!-- Main Links (Centered on Desktop) -->
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <!-- Mobile-only Login/Signup -->
-                            <li class="nav-item d-lg-none mt-3">
-                                <a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a>
-                                <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                         </ul>
+                        
+                        <div class="d-lg-none mt-4">
+                            <a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a>
+                            <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 4. Desktop Action Buttons (Right Corner) -->
-                <div class="d-none d-lg-flex align-items-center ms-lg-3">
-                    <button class="btn btn-link text-decoration-none me-2 fw-bold" id="rtl-toggle" title="Toggle RTL">RTL</button>
-                    <button class="btn btn-link text-decoration-none me-3" id="theme-toggle" title="Toggle Theme">
-                        <i class="bi bi-moon-fill"></i>
-                    </button>
-                    <a href="login.html" class="btn btn-secondary btn-sm px-3 me-2">Login</a>
-                    <a href="register.html" class="btn btn-primary btn-sm px-3">Sign Up</a>
+                <div class="d-none d-lg-flex align-items-center gap-2">
+                    <button class="btn" id="theme-toggle" title="Toggle Theme"><i class="bi bi-moon-fill fs-5"></i></button>
+                    <button class="btn me-3" id="rtl-toggle" title="Toggle RTL">RTL</button>
+                    <a href="login.html" class="btn btn-link text-main text-decoration-none fw-bold me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary px-4">Sign Up</a>
                 </div>
             </div>
         </nav>
@@ -80,10 +79,10 @@
 
     <main>
         <!-- Page Header -->
-        <section class="contact-hero text-white">
+        <section class="hero contact-hero text-white">
             <div class="container text-center">
-                <h1 class="display-4 fw-bold">Get In Touch</h1>
-                <p class="lead opacity-75">We're here to answer any questions about your project.</p>
+                <h1 class="display-3 fw-bold mb-3">Get In Touch</h1>
+                <p class="lead mx-auto" style="max-width: 800px; opacity: 0.9; line-height: 1.8;">Ready to start your project or need a custom quote? Our technical experts are standing by to provide a detailed consultation and help bring your vision to life.</p>
             </div>
         </section>
 
@@ -187,19 +186,19 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="p-4 border rounded-4 text-center">
+                        <div class="p-4 border-0 shadow-sm rounded-4 text-center hover-card bg-white">
                             <h5>Orlando (HQ)</h5>
                             <p class="small text-muted mb-0">123 Pickleball Lane, Sports City, FL 32801</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="p-4 border rounded-4 text-center">
+                        <div class="p-4 border-0 shadow-sm rounded-4 text-center hover-card bg-white">
                             <h5>Austin</h5>
                             <p class="small text-muted mb-0">456 Court Way, Austin, TX 78701</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="p-4 border rounded-4 text-center">
+                        <div class="p-4 border-0 shadow-sm rounded-4 text-center hover-card bg-white">
                             <h5>Phoenix</h5>
                             <p class="small text-muted mb-0">789 Desert Road, Phoenix, AZ 85001</p>
                         </div>
@@ -217,21 +216,21 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="p-4 border rounded-4 h-100">
+                        <div class="p-4 border-0 shadow-sm rounded-4 h-100 hover-card bg-white">
                             <h6>Sales & Estimates</h6>
                             <p class="small text-muted mb-2">For new project quotes and pricing.</p>
                             <a href="mailto:sales@picklepro.com" class="text-primary text-decoration-none fw-bold">sales@picklepro.com</a>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="p-4 border rounded-4 h-100">
+                        <div class="p-4 border-0 shadow-sm rounded-4 h-100 hover-card bg-white">
                             <h6>Project Management</h6>
                             <p class="small text-muted mb-2">For ongoing build updates.</p>
                             <a href="mailto:pm@picklepro.com" class="text-primary text-decoration-none fw-bold">pm@picklepro.com</a>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="p-4 border rounded-4 h-100">
+                        <div class="p-4 border-0 shadow-sm rounded-4 h-100 hover-card bg-white">
                             <h6>Maintenance Support</h6>
                             <p class="small text-muted mb-2">For surface care and repairs.</p>
                             <a href="mailto:care@picklepro.com" class="text-primary text-decoration-none fw-bold">care@picklepro.com</a>
@@ -253,14 +252,14 @@
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6">
-                                <div class="p-3 bg-white bg-opacity-10 rounded-3 text-center">
-                                    <h5 class="mb-0">200+</h5>
+                                <div class="p-3 bg-white bg-opacity-10 rounded-3 text-center border border-white border-opacity-10 hover-lift shadow-hover transition-base">
+                                    <h5 class="mb-0 text-white fw-bold">200+</h5>
                                     <small class="text-white">Active Partners</small>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="p-3 bg-white bg-opacity-10 rounded-3 text-center">
-                                    <h5 class="mb-0">Certified</h5>
+                                <div class="p-3 bg-white bg-opacity-10 rounded-3 text-center border border-white border-opacity-10 hover-lift shadow-hover transition-base">
+                                    <h5 class="mb-0 text-white fw-bold">Certified</h5>
                                     <small class="text-white">Training Provided</small>
                                 </div>
                             </div>
@@ -275,19 +274,19 @@
             <div class="container">
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <div class="d-flex p-4 bg-white rounded-4 shadow-sm h-100 align-items-start">
+                        <div class="d-flex p-4 bg-white rounded-4 shadow-sm h-100 align-items-start hover-lift shadow-hover transition-base">
                             <i class="bi bi-chat-quote-fill text-primary fs-2 me-4"></i>
                             <div>
-                                <h5>Live Chat</h5>
+                                <h5 class="fw-bold">Live Chat</h5>
                                 <p class="text-muted small mb-0">Available Mon-Fri, 9am - 6pm EST. Get instant answers from our design team.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="d-flex p-4 bg-white rounded-4 shadow-sm h-100 align-items-start">
+                        <div class="d-flex p-4 bg-white rounded-4 shadow-sm h-100 align-items-start hover-lift shadow-hover transition-base">
                             <i class="bi bi-calendar-check-fill text-primary fs-2 me-4"></i>
                             <div>
-                                <h5>Book a Visit</h5>
+                                <h5 class="fw-bold">Book a Visit</h5>
                                 <p class="text-muted small mb-0">Schedule a site assessment directly through our online calendar.</p>
                             </div>
                         </div>
@@ -340,67 +339,62 @@
             <div class="container py-4">
                 <h2 class="fw-bold mb-4">Connect on Social</h2>
                 <div class="row g-4 justify-content-center">
-                    <div class="col-auto"><a href="#" class="btn btn-dark btn-lg rounded-pill px-4"><i class="bi bi-facebook me-2"></i> Facebook</a></div>
-                    <div class="col-auto"><a href="#" class="btn btn-dark btn-lg rounded-pill px-4"><i class="bi bi-instagram me-2"></i> Instagram</a></div>
-                    <div class="col-auto"><a href="#" class="btn btn-dark btn-lg rounded-pill px-4"><i class="bi bi-linkedin me-2"></i> LinkedIn</a></div>
+                    <div class="col-auto"><a href="#" class="btn btn-secondary btn-lg rounded-pill px-4"><i class="bi bi-facebook me-2"></i> Facebook</a></div>
+                    <div class="col-auto"><a href="#" class="btn btn-secondary btn-lg rounded-pill px-4"><i class="bi bi-instagram me-2"></i> Instagram</a></div>
+                    <div class="col-auto"><a href="#" class="btn btn-secondary btn-lg rounded-pill px-4"><i class="bi bi-linkedin me-2"></i> LinkedIn</a></div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="mt-5">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <a class="navbar-brand d-flex align-items-center text-white mb-3" href="#">
-                        <i class="bi bi-trophy-fill me-2 text-primary"></i>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="brand-identity mb-4" href="index.html">
+                        <i class="bi bi-trophy-fill"></i>
                         <span>PicklePro</span>
                     </a>
-                    <p class="text-white-50">Leading the way in professional pickleball court solutions. We build excellence from the ground up.</p>
+                    <p class="text-white opacity-75 mb-4">Building world-class pickleball courts with precision and passion. We are your partners in creating the ultimate playing experience.</p>
                     <div class="d-flex gap-3">
-                        <a href="#"><i class="bi bi-facebook fs-4"></i></a>
-                        <a href="#"><i class="bi bi-twitter-x fs-4"></i></a>
-                        <a href="#"><i class="bi bi-instagram fs-4"></i></a>
-                        <a href="#"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle p-2" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-4">Company</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Explore</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="about.html">Our Story</a></li>
                         <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
-                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="pricing.html">Pricing Plans</a></li>
+                        <li class="mb-2"><a href="blog.html">Latest News</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-4">Support</h5>
-                    <ul class="list-unstyled">
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled footer-links">
                         <li class="mb-2"><a href="contact.html">Contact Us</a></li>
-                        <li class="mb-2"><a href="faq.html">FAQ</a></li>
-                        <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
-                        <li class="mb-2"><a href="terms.html">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#">Help Center</a></li>
+                        <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#">Terms of Use</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p class="text-white-50">Subscribe to get the latest tips and offers.</p>
-                    <form class="mt-3">
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Newsletter</h5>
+                    <p class="text-white opacity-75 mb-4">Stay updated with our latest projects and offers.</p>
+                    <form>
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                            <button class="btn btn-primary" type="button">Join</button>
+                            <input type="email" class="form-control border-0 text-white" placeholder="Enter email" style="padding: 12px;">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <hr class="mt-5 mb-4 border-white-50">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 text-white-50">&copy; 2026 PicklePro. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                </div>
+            <div class="border-top border-white border-opacity-10 mt-5 pt-4 text-center">
+                <p class="text-white-50 small mb-0">&copy; 2026 PicklePro Construction & Resurfacing. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
