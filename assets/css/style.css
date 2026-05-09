@@ -147,13 +147,43 @@ p {
 }
 
 .nav-link {
-    color: #212529 !important; /* Fixed Dark Text */
+    color: var(--secondary-color) !important;
     font-weight: 600;
     transition: var(--transition);
 }
 
+[data-bs-theme="dark"] .nav-link {
+    color: #fff !important;
+}
+
 .nav-link:hover, .nav-link.active {
-    color: #85bb2f !important; /* Fixed Pickleball Green */
+    color: var(--primary-color) !important;
+}
+
+/* Mobile Menu Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding-top: 10px;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 12px 15px !important;
+        border-radius: 8px;
+        margin-bottom: 5px;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+        background-color: rgba(133, 187, 47, 0.1);
+    }
+    
+    [data-bs-theme="dark"] .nav-link:hover, 
+    [data-bs-theme="dark"] .nav-link.active {
+        background-color: rgba(133, 187, 47, 0.2);
+    }
 }
 
 /* Header Action Buttons (Static Contrast) */
