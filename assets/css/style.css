@@ -128,6 +128,25 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-sm);
     transition: var(--transition);
     position: relative;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Optimization for 1024px view to prevent wrapping */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .nav-link {
+        padding: 0.5rem 0.5rem !important;
+        font-size: 0.9rem;
+    }
+    .brand-identity {
+        font-size: 1.4rem !important;
+    }
+    .brand-identity i {
+        font-size: 1.6rem !important;
+    }
+    .navbar .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
 }
 
 .nav-link:hover, .nav-link.active {
@@ -347,10 +366,10 @@ section {
 
 /* Footer Refined */
 footer {
-    background: linear-gradient(135deg, #1a2a6c 0%, #1a3a8a 100%); /* Deep Navy Gradient instead of near-black */
+    background: #000000; /* Total Black Footer */
     color: #fff;
-    padding: 100px 0 40px;
-    border-top: 4px solid var(--primary-color);
+    padding: 60px 0 40px;
+    border-top: 2px solid var(--primary-color);
 }
 
 footer a {
@@ -440,6 +459,47 @@ footer .form-control::placeholder {
 [dir="rtl"] .ms-auto { margin-right: auto !important; margin-left: 0 !important; }
 [dir="rtl"] .me-auto { margin-left: auto !important; margin-right: 0 !important; }
 [dir="rtl"] .bi-arrow-right::before { content: "\f12f"; } /* Point left */
+
+/* ============================================
+   THEME-AWARE CONTRAST FIXES
+   ============================================ */
+
+/* Force light backgrounds to use dark text in all themes if they don't respond to CSS variables */
+.bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5, .bg-light h6,
+.bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6 {
+    color: #0f172a !important; /* Force deep slate on light backgrounds */
+}
+
+.bg-light p, .bg-light li, .bg-light span:not(.text-primary),
+.bg-white p, .bg-white li, .bg-white span:not(.text-primary) {
+    color: #475569 !important;
+}
+
+/* Correct Dark Mode Backgrounds for Utilities */
+[data-bs-theme="dark"] .bg-light, 
+[data-bs-theme="dark"] section.bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+[data-bs-theme="dark"] .bg-white,
+[data-bs-theme="dark"] section.bg-white {
+    background-color: var(--bg-body) !important;
+}
+
+/* Restore theme-aware text for dark backgrounds in dark mode */
+[data-bs-theme="dark"] .bg-light h1, [data-bs-theme="dark"] .bg-light h2, 
+[data-bs-theme="dark"] .bg-light h3, [data-bs-theme="dark"] .bg-light h4, 
+[data-bs-theme="dark"] .bg-light h5, [data-bs-theme="dark"] .bg-light h6,
+[data-bs-theme="dark"] .bg-white h1, [data-bs-theme="dark"] .bg-white h2, 
+[data-bs-theme="dark"] .bg-white h3, [data-bs-theme="dark"] .bg-white h4, 
+[data-bs-theme="dark"] .bg-white h5, [data-bs-theme="dark"] .bg-white h6 {
+    color: var(--text-main) !important;
+}
+
+[data-bs-theme="dark"] .bg-light p, [data-bs-theme="dark"] .bg-light li,
+[data-bs-theme="dark"] .bg-white p, [data-bs-theme="dark"] .bg-white li {
+    color: var(--text-muted) !important;
+}
 
 /* Responsive Fixes */
 @media (max-width: 991px) {
