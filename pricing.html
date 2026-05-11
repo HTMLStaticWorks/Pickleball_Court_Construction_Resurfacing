@@ -40,39 +40,44 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div class="mobile-controls d-lg-none mb-4">
-                            <div class="d-flex gap-2">
-                                <button class="mobile-control-btn theme-toggle-mobile">
-                                    <i class="bi bi-moon-fill"></i> Mode
-                                </button>
-                                <button class="mobile-control-btn rtl-toggle-mobile">
-                                    <i class="bi bi-translate"></i> RTL
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                            <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <ul class="navbar-nav mb-4">
+                             <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                             <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                             <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link contact-link" href="contact.html">Contact</a></li>
                         </ul>
                         
-                        <div class="d-lg-none mt-4">
-                            <a href="login.html" class="btn btn-secondary w-100 mb-2">Login</a>
-                            <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
+                        <div class="offcanvas-footer mt-auto pt-4 border-top">
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-outline-dark rounded-circle rtl-toggle-mobile" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; padding: 0;">RTL</button>
+                                <button class="btn btn-outline-dark rounded-circle theme-toggle-mobile" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; padding: 0;"><i class="bi bi-moon-fill"></i></button>
+                                <a href="login.html" class="btn btn-primary flex-grow-1">Login</a>
+                                <a href="register.html" class="btn btn-primary flex-grow-1">Sign Up</a>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
 
                 <div class="d-none d-lg-flex align-items-center gap-2">
                     <button class="btn" id="theme-toggle" title="Toggle Theme"><i class="bi bi-moon-fill fs-5"></i></button>
                     <button class="btn me-3" id="rtl-toggle" title="Toggle RTL">RTL</button>
-                    <a href="login.html" class="btn btn-link text-main text-decoration-none fw-bold me-2">Login</a>
-                    <a href="register.html" class="btn btn-primary px-4">Sign Up</a>
+                    <a href="login.html" class="btn btn-secondary rounded-pill px-4 me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary rounded-pill px-4">Sign Up</a>
                 </div>
             </div>
         </nav>

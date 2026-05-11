@@ -266,7 +266,7 @@ section {
 .hero {
     min-height: 100vh;
     padding-top: calc(var(--header-height) + 40px);
-    background: linear-gradient(rgba(26, 42, 108, 0.7), rgba(26, 42, 108, 0.85)), url('../images/hero-bg.png') center/cover no-repeat;
+    background: linear-gradient(rgba(26, 42, 108, 0.7), rgba(26, 42, 108, 0.85)), url('../images/hero-new.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     color: #fff;
@@ -383,11 +383,140 @@ footer a:hover {
     padding-left: 5px;
 }
 
-/* Offcanvas Mobile Menu */
+/* Offcanvas Mobile Menu - Premium Solid Sidebar */
 .offcanvas {
     background-color: var(--bg-body) !important;
+    color: var(--text-main) !important;
+    border-left: 1px solid var(--border-color) !important;
+    width: 350px !important;
+    height: 100vh !important;
+}
+
+@media (min-width: 992px) {
+    .offcanvas { display: none !important; }
+}
+
+.offcanvas-header {
+    background-color: var(--bg-body) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 1.25rem 1.5rem !important;
+    flex-shrink: 0;
+}
+
+.offcanvas-header .brand-identity {
+    font-size: 2rem !important;
+}
+
+.offcanvas-header .brand-identity i {
+    font-size: 2.2rem !important;
+}
+
+.offcanvas-body {
+    background-color: var(--bg-body) !important;
+    padding: 0.5rem 1.5rem 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Offcanvas Brand Specifics */
+.offcanvas-header .brand-identity {
+    font-size: 1.75rem !important;
+    color: var(--primary-color) !important;
+}
+
+.offcanvas-header .brand-identity i {
+    font-size: 2rem !important;
+    color: var(--primary-color) !important;
+}
+
+/* Offcanvas Navigation Links - Specificity Boost to override general navbar rules */
+.navbar .offcanvas-body .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+.navbar .offcanvas-body .nav-link {
+    font-size: 1.15rem !important;
+    font-weight: 600;
+    padding: 0.4rem 0 !important;
+    color: var(--text-main) !important;
+    border-bottom: none !important;
+    transition: var(--transition);
+    display: block !important;
+}
+
+.navbar .offcanvas-body .nav-link:hover {
+    color: var(--primary-color) !important;
+    padding-left: 10px !important;
+}
+
+/* The Signature Contact Underline from Reference */
+.offcanvas-body .contact-link {
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--primary-color) !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 2rem;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Offcanvas Footer Layout */
+.offcanvas-footer {
+    background-color: var(--bg-body);
+}
+
+.offcanvas-footer .btn {
+    font-size: 0.85rem;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    white-space: nowrap !important;
+    padding: 0 10px !important;
+}
+
+.offcanvas-footer .btn-outline-dark {
+    border: 1px solid var(--border-color);
     color: var(--text-main);
-    border-left: 1px solid var(--border-color);
+}
+
+/* Quote Section Styles */
+.quote-form-container {
+    max-width: 650px;
+}
+
+.quote-form-container .form-control:focus {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.quote-form-container input::placeholder {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .quote-form-container form {
+        border-radius: 20px !important;
+        padding: 1rem !important;
+    }
+    
+    .quote-form-container .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+.border-top {
+    border-top: 1px solid var(--border-color) !important;
 }
 
 .form-control {
@@ -432,23 +561,34 @@ footer .form-control::placeholder {
 }
 
 .mobile-control-btn {
-    background: var(--bg-light);
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    padding: 12px;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-main) !important;
+    padding: 14px !important;
     border-radius: var(--radius-sm);
     flex: 1;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.mobile-control-btn i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
 .mobile-control-btn:hover {
-    background: var(--primary-color);
-    color: #ffffff;
+    background: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+}
+
+.mobile-control-btn:hover i {
+    color: #ffffff !important;
 }
 
 /* RTL Support */
@@ -464,15 +604,24 @@ footer .form-control::placeholder {
    THEME-AWARE CONTRAST FIXES
    ============================================ */
 
-/* Force light backgrounds to use dark text in all themes if they don't respond to CSS variables */
+/* Theme-Aware Contrast Utilities */
 .bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5, .bg-light h6,
 .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6 {
-    color: #0f172a !important; /* Force deep slate on light backgrounds */
+    color: var(--text-main);
 }
 
-.bg-light p, .bg-light li, .bg-light span:not(.text-primary),
-.bg-white p, .bg-white li, .bg-white span:not(.text-primary) {
-    color: #475569 !important;
+/* Specific overrides for translucent cards on dark backgrounds */
+.bg-secondary .bg-white.bg-opacity-10 h1, .bg-secondary .bg-white.bg-opacity-10 h2,
+.bg-secondary .bg-white.bg-opacity-10 h3, .bg-secondary .bg-white.bg-opacity-10 h4,
+.bg-secondary .bg-white.bg-opacity-10 h5, .bg-secondary .bg-white.bg-opacity-10 h6,
+.bg-dark .bg-white.bg-opacity-10 h1, .bg-dark .bg-white.bg-opacity-10 h2,
+.bg-dark .bg-white.bg-opacity-10 h3, .bg-dark .bg-white.bg-opacity-10 h4,
+.bg-dark .bg-white.bg-opacity-10 h5, .bg-dark .bg-white.bg-opacity-10 h6 {
+    color: #ffffff !important;
+}
+
+.bg-secondary .bg-white.bg-opacity-10 p, .bg-dark .bg-white.bg-opacity-10 p {
+    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Correct Dark Mode Backgrounds for Utilities */
@@ -493,22 +642,29 @@ footer .form-control::placeholder {
 [data-bs-theme="dark"] .bg-white h1, [data-bs-theme="dark"] .bg-white h2, 
 [data-bs-theme="dark"] .bg-white h3, [data-bs-theme="dark"] .bg-white h4, 
 [data-bs-theme="dark"] .bg-white h5, [data-bs-theme="dark"] .bg-white h6 {
-    color: var(--text-main) !important;
+    color: var(--text-main);
 }
 
 [data-bs-theme="dark"] .bg-light p, [data-bs-theme="dark"] .bg-light li,
 [data-bs-theme="dark"] .bg-white p, [data-bs-theme="dark"] .bg-white li {
-    color: var(--text-muted) !important;
+    color: var(--text-muted);
 }
 
 /* Responsive Fixes */
 @media (max-width: 991px) {
-    .navbar { height: 70px; }
+    .navbar { height: 80px; }
     section { padding: 60px 0; }
     .hero { text-align: center; }
     
     .navbar-expand-lg .navbar-nav { display: none !important; }
-    .navbar-expand-lg .navbar-toggler { display: block !important; }
+    .navbar-expand-lg .navbar-toggler { 
+        display: flex !important; 
+        height: 80px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem;
+        border-radius: 0;
+    }
 }
 
 @media (max-width: 768px) {
