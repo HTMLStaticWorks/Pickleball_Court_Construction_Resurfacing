@@ -134,18 +134,25 @@ h1, h2, h3, h4, h5, h6 {
 /* Optimization for 1024px view to prevent wrapping */
 @media (min-width: 992px) and (max-width: 1199px) {
     .nav-link {
-        padding: 0.5rem 0.5rem !important;
-        font-size: 0.9rem;
+        padding: 0.5rem 0.4rem !important;
+        font-size: 0.85rem;
     }
     .brand-identity {
-        font-size: 1.4rem !important;
+        font-size: 1.3rem !important;
     }
     .brand-identity i {
-        font-size: 1.6rem !important;
+        font-size: 1.5rem !important;
     }
     .navbar .btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem !important;
+        font-size: 0.8rem;
+        white-space: nowrap !important;
+    }
+    .navbar .d-lg-flex {
+        gap: 4px !important;
+    }
+    .navbar .btn.me-3, .navbar .btn.me-2 {
+        margin-right: 2px !important;
     }
 }
 
